@@ -10,12 +10,13 @@ NginxOmniauthAdapter provides small Rack app (built with Sinatra) for `auth_requ
 
 - nginx with ngx_http_auth_request_module
 
-## Quick example
+## Quick example with HTTPS
 
 ```
 $ bundle install
 
 $ cd example/
+$ openssl req -new -x509 -days 30 -nodes -newkey rsa:2048 -keyout xip.io.key -out xip.io.crt -subj '/CN=*.127.0.0.1.xip.io'
 $ foreman start
 ```
 
